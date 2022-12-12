@@ -1,0 +1,43 @@
+// Update document single udpate
+db.cart.update(
+    // query
+    { _id: ObjectId('6391b7b77d8e6a288b5c1312') },
+    // update documents
+    {
+        $set: {
+            cartid: 5,
+            cart: {
+                name: "mika singh",
+                email: "mikasingh@gmail.com",
+                occupation: "singer"
+            }
+        }
+    },
+    // update options
+    
+    {}
+)
+
+// unset delete certain fields
+db.cart.update(
+    // query
+    { _id: ObjectId('6391b7b77d8e6a288b5c1312') },
+    // update documents
+    {
+        $unset: {
+            cartid: 1,
+            cart: 1
+        }
+    },
+    // update options
+    
+    {}
+)
+
+// In the find Category where order matters and size matter
+
+{Category:["Fashion","Men's"]}
+
+// In the find Category where order & size don't matters
+
+{Category:{$all:["Fashion","Men's"]}}
